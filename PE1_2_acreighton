@@ -1,0 +1,114 @@
+// 2-04
+int x = 0 ;
+int y = 55 ;
+
+void setup() {
+  size(100,100) ;
+}
+void draw() {
+  background(204) ;
+  line(x, y, x+20, y-40) ;
+  line(x+10, y, x+30, y-40) ;
+  line(x+20, y, x+40, y-40) ;
+  x = x + 1 ;
+  if (x > 100) {
+    x = -40 ; 
+  }
+}
+// 2-05
+int x = 0 ;
+int y = 55 ;
+
+void setup() {
+  size(100,100) ;
+}
+void draw() {
+  background(204) ;
+  float x = mouseX ;
+  float y = mouseY ;
+  line(x, y, x+20, y-40) ;
+  line(x+10, y, x+30, y-40) ;
+  line(x+20, y, x+40, y-40) ;
+}
+// 2-06
+void setup() {
+  size(100, 100) ; 
+}
+void draw() {
+  background(204) ;
+  diagonals(40, 90) ;
+  diagonals(60, 62) ;
+  diagonals(20, 40) ;
+}
+void diagonals(int x, int y) {
+  line(x, y, x+20, y-40) ;
+  line(x+10, y, x+30, y-40) ;
+  line(x+20, y, x+40, y-40) ;
+}
+//2-07
+Diagonals da, db ;
+void setup() {
+  size(100, 100) ;
+  da = new Diagonals(0, 80, 1, 2, 0) ;
+  db = new Diagonals(0, 55, 2, 6, 255) ;
+}
+void draw() {
+  background(204) ;
+  da.update() ;
+  db.update() ;
+}
+class Diagonals {
+  int x, y, speed, thick, gray ;
+  Diagonals(int xpos, int ypos, int s, int t, int g) {
+    x = xpos ;
+    y = ypos ;
+    speed = s ;
+    thick = t ;
+    gray = g ;
+  }
+ void update() {
+   strokeWeight(thick) ;
+   stroke(gray);
+   line(x, y, x+20, y-40) ;
+   line(x+10, y, x+30, y-40) ;
+   line(x+20, y, x+40, y-40) ;
+   x = x + speed ;
+   if (x > 100) {
+     x = -100 ;
+   }
+ }
+}
+// 2-08
+int num = 20 ;
+int[] dx = new int[num] ;
+int[] dy = new int[num] ;
+void setup()  {
+  size(100,100);
+  for (int i = 0 ; i < num ; i++) {
+    dx[i] = i * 5 ;
+    dy[i] = 12 + (i * 6) ;
+  }
+}
+void draw() {
+  background(204) ;
+  for (int i = 0 ; i < num ; i++) {
+    dx[i] = dx[i] + 1 ;
+    if (dx[i] > 100) {
+      dx[i] = -100 ;
+    }
+    diagonals(dx[i], dy[i]) ;
+  }
+}
+void diagonals(int x, int y) {
+  line(x, y, x+20, y-40) ;
+  line(x+10, y, x+40, y-40) ;
+}
+// 2-09
+// Two forward slashes are used to denote a comment
+// All text one the same line is a part of the comment
+// There must be no spaces between the slashes "//" not "/ /"
+// If you want a comment that is many lines long, us the syntax for a multiline comment
+/*
+a forward slash followed by an asterik allows for
+comments to continue */
+// All letters and symbols that are not commenst are processed by the computer
