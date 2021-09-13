@@ -1,0 +1,44 @@
+//Make a Square travel the perimeter of a square
+// 1. Declare your variables
+int x = 0;
+int y = 0;
+
+
+//2. Set disolay size
+void setup() {
+  size(200, 200);
+}
+
+void draw() {
+  // Set background
+  background(204);
+  rect(x, y, 20, 20);
+  x = x + 1;
+  loop();
+ 
+  //Draw shape. Increment stepsize
+  
+  //If statement: once shape reaches the right side, shape moves down
+  if (x > 180) {
+    x = 180;
+    y+=1;
+  }
+  //If statement: once shape reaches the bottom, shape moves to the left
+  if (y > 180) {
+    y+=0;
+    x-=2;
+  }
+  //If statement: once shape reaches the left side, shape moves up
+  if (x < 0){
+    x = 0;
+    x-=2;
+    y-= 1;
+  }
+  if (y < 0) {
+    y = 0;
+    x+=1;
+  //If statement: once shape reaches the top , shape moves to the right
+}
+}
+  
+  
