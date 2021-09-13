@@ -1,0 +1,23 @@
+//Declare variables
+
+int y = 0;
+//2. Set display size
+void setup() {
+  size(200, 200);
+}
+
+void draw() {
+  background(204);
+  line(0, y, 200, y);
+  strokeWeight(5);
+  y+= 1;
+
+  //Draw shape. Increment stepsze
+  
+  //Include conditional statement.  What do you want your variable to do 
+  //once it reaches a certian position? 
+if (y > 200){
+  y = 0;
+}
+   
+}
